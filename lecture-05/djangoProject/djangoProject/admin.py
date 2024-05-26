@@ -6,12 +6,14 @@ from djangoProject.models import User,Product
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    fields = ['username','email','name']
-    list_display = ['username','name']
+    fields = ['title','name','username','email']
+    list_display = ['title','name','username']
     search_fields = ['name']
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    fields = ['name','price','description','stock']
+    fields = ['seller','name','price','description','stock']
     search_fields = ['name']
     list_display = ['id','name','price']
+    save_as = True
+
