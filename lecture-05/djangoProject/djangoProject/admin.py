@@ -12,8 +12,17 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    fields = ['seller','name','price','description','stock']
+    # fields = ['seller','name','price','description','stock']
     search_fields = ['name']
     list_display = ['id','name','price']
     save_as = True
+    fieldsets = (
+        ("Product Info", {
+                'fields': ('seller','name','description')
+        }),
+        ("Stock Info",{
+            'fields': ('price','stock',),
+            'classes': ('collapse')
+        })
+    )
 
