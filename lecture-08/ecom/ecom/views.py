@@ -56,6 +56,7 @@ class ShippingAddressListCreateAPIView(GenericAPIView):
             'shipping_address',
         ).data, status=201)
 
+
 class setDefaultShippingAddress(APIView):
     def patch(self,request,user_id,address_id):
         user = get_object_or_404(User,pk=user_id)
