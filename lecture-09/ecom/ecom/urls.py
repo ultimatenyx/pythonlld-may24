@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ecom.views import say_hello
 
 urlpatterns = [
+    path('',say_hello,name='say_hello'),
     path('admin/', admin.site.urls),
 ]

@@ -48,7 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'ecom.simple_middleware.simple_middleware'
+    'ecom.simple_middleware.simple_middleware',
+    'ecom.simple_middleware.another_middleware'
 ]
 
 ROOT_URLCONF = 'ecom.urls'
