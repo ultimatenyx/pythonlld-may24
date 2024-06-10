@@ -1,3 +1,6 @@
+from django.http import HttpResponse
+
+
 class SimpleClassMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
@@ -8,3 +11,8 @@ class SimpleClassMiddleware:
 
         print("Class based after")
         return response
+
+    def process_exception(self, request, exception):
+        print("Exception")
+        print(str(exception))
+        return HttpResponse("This is empty")

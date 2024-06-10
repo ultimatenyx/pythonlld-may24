@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ecom.views import ProductListCreateAPIView
+# from ecom.views import ProductListCreateAPIView
+from ecom.views import ProductAPIView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -25,6 +26,7 @@ from rest_framework_simplejwt.views import (
 urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('products/',ProductListCreateAPIView.as_view(),name='products'),
+    # path('products/',ProductListCreateAPIView.as_view(),name='products'),
+    path('products/',ProductAPIView.as_view(),name='products'),
     path('admin/', admin.site.urls),
 ]
