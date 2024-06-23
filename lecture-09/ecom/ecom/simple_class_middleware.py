@@ -13,6 +13,9 @@ class SimpleClassMiddleware:
         return response
 
     def process_exception(self, request, exception):
-        print("Exception")
-        print(str(exception))
-        return HttpResponse("This is empty")
+        # If we only wish to intercept EmptyExceptions
+        if type(exception) is EmptyException:
+            print("Exception")
+            print(str(exception))
+            return HttpResponse("This is empty")
+        return None
